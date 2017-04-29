@@ -3,7 +3,7 @@
 * Unsupervised
 * Recommender Systems    
 
-## Supervised Learning
+### Supervised Learning
 
 __Example__: Housing price prediction. 
 * Choosing straight line or quadratic to data set to accurately determine house price.
@@ -14,7 +14,7 @@ __Example 1__: Breast Cancer (malignant or benign?)
 * __Classification Model__: map input variables into discrete categories (discrete valued output (Map values to classifications)).
 
 Supervised learning:
-    * "Right" answers are given in data sets.
-    * Already know what our correct output should look like, knowing there is a relationship between input and output.
-    * Categorized into 2 problems listed above (regression / classification models).
+* "Right" answers are given in data sets.
+* Already know what our correct output should look like, knowing there is a relationship between input and output.
+* Categorized into 2 problems listed above (regression / classification models).
 
