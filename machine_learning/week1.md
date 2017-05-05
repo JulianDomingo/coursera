@@ -62,4 +62,32 @@ set.
 * Visualizes 3D figure
 * Ultimately, need software to find the optimal parameter values to minimize
   the cost function J().  
- 
+
+#### Univariate Linear Regression - Gradient Descent
+* Optimization algorithm which finds local minimum.
+* Algorithm which minimizes some arbitrary function (applicable to cost functions). 
+  * Repeat until convergence: theta\_j := (theta\_j - (learning\_rate \* (partial\_deriv(theta0, theta1, ...) w.r.t. theta\_j)))
+    * Learning rate: constant controlling intensity of descent for each iteration of algorithm
+    * Direction of descent is the partial derivative term of the equation.
+    * Do this for each parameter "j", **simultaneously**.
+      * Computation is done for all parameters, then assignment is done for all parameters.
+    * Depending on the starting point in the surface, a different minima could be reached.
+* Partial deriv. notation for 2+ parameters, can use derivative notation for a single variable (univariate linear regression models)
+* If learning\_rate is too small, gradient descent is slow.
+* If learning\_rate is too large, gradient descent can overshoot, causing algorithm to diverge or fail to converge.
+* From the gradient descent algorithm, it is clear to see once an optimum is reached, the next iteration won't change the parameter location (hence the convergence property for a gradient descent which doesn't have a "destructive" learning\_rate).
+* Furthermore, each g.d. iteration automatically takes smaller steps. The partial deriv. of J() decreases in magnitude, eventually converging to 0.
+  * **So, no need to decrease learning rate every iteration.**
+
+#### Gradient Descent Applied to Cost Function:
+* Goal: minimizes the squared error through linear regression.
+* Cost function for linear regression is a convex function (bowl-shaped surface, so only a global minimum / can only converge to the global minimum) 
+* This specific implementation of gradient descent is also called "batch" gradient descent. 
+  * **Batch gradient descent):** each step of gradient descent uses *all* training examples (all samples in training set). 
+* TTK : Normal equations method: while it doesn't scale as well as gradient descent, this equation calculates the optimal hypothesis function without having to do it iteratively.
+
+
+
+
+
+
