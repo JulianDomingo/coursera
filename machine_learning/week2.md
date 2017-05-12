@@ -16,7 +16,7 @@
 #### Optimizing Gradient Descent with Feature Scaling & Mean Normalization
 * Make sure features are on a similar scale so gradient descent can converge
   quicker.
-  * Example: feature<sub>1</sub>: size (0 ~ 2000 ft.^2)
+  * Example: feature<sub>1</sub>: size (0 ~ 2000 ft.<sup>2</sup>)
              feature<sub>2</sub>: number of bedrooms (1 - 5)
     * Result: gradient descent ends up oscillating to find global minimum.
     * Solution: divide by range (i.e. size / (2000 - 0))
@@ -59,10 +59,10 @@ precise (but not slow) descents per iteration.
 values).
         * Ex.: size of range(0, 1000) with a new hypothesis function h(theta)
           = theta<sub>0</sub> + theta<sub>1</sub> * size + theta<sub>2</sub>
-* sqrt(size) feature scales size to be size / 1000 for theta<sub>1</sub> and
-  sqrt(size) / 32 for theta<sub>2</sub> (sqrt(1000) ~ 32).
+* sqrt(size) feature scales size to be size / 1000 for theta<sub>1</sub> and sqrt(size) / 32 for theta<sub>2</sub> (sqrt(1000) ~ 32).
 * Takeaway: If model can't be as predictive with given features, can choose
   different features **using** existing features to *potentially* get better
 models. 
 * Will later learn algorithms to determine best transformations for feature to
   optimize model (if existing features are not optimal).
+
