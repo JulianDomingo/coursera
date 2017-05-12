@@ -27,6 +27,8 @@
   - mew<sub>i</sub> to make features have approximately zero mean. 
   * mew<sub>i</sub>: average value of feature<sub>i</sub> in the training set.
 
+* **NOTE** : range is min and max of **values of the feature in training set only**, so for a grade on an exam with two samples with grades 40 and 100, the range is **NOT** (100 - 0) and instead (100 - 40).
+
 * Takeaway: small ranges for theta vector causes a quicker descent, whereas
   a large range descends slowly due to heavy oscillation. Restricting to
 a semi-fixed range (-1 <= feature<sub>i</sub> <= 1) allows for theta to take
