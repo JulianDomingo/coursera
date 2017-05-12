@@ -66,3 +66,31 @@ models.
 * Will later learn algorithms to determine best transformations for feature to
   optimize model (if existing features are not optimal).
 
+#### Computing Parameters Analytically
+* Normal equation: gives us better way to solve for theta parameters for some
+  linear regression problems (applicable only for linear regression problems)
+  * Solve for theta analytically (don't need to do it iteratively like with
+    gradient descent).
+* Intuitively, if theta was just 1D (constant, not a vector), then can solve
+  for theta by taking derivate of J(theta).
+* For theta of higher dimensions:
+  * theta = (X<sup>T</sup>X)<sup>-1</sup>X<sup>T</sup>y; where y = output
+    vector and X = design matrix (rows are feature vectors of each sample, transposed).
+  * Ex.: 1 feature with 1 sample => design matrix = [1, x<sup>1</sup>], y = [result<sub>sample1</sub>]
+* Feature scaling isn't necessary for calculating theta using normal equation.
+* Choosing Gradient Descent vs. Normal Equation:
+  * Gradient Descent: 
+    * -: need to choose learning rate, needs many iterations
+    * +: scalable (works well even when many features) O(kn<sup>2</sup>); k = number of iterations
+  * Normal equation:
+    * -: Need to compute X<sup>T</sup>X<sup>-1</sup>, and cost of inverting matrices is O(feature\_size<sup>3</sup>)
+    * +: don't need to choose learning rate, don't need to iterate 
+  * Threshold point: ~10<sup>3</sup> features > for gradient descent
+
+#### Non-invertibility of Normal Equations
+* What happens if design matrix is non-invertible / degenerate? 
+  * Octave: pinv() handles degenerate matrices correctly.
+* Common causes of degenerate matrices:
+  * Redundant features (linearly dependent): size in different metrics
+  * Too many features s.t. size(training set) < size(features): delete some or use regularization (see later weekX.md)
+  
