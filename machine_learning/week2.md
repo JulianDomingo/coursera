@@ -95,4 +95,50 @@ models.
 * Common causes of degenerate matrices:
   * Redundant features (linearly dependent): size in different metrics
   * Too many features s.t. size(training set) < size(features): delete some or use regularization (see later weekX.md)
-  
+ 
+#### Using Octave
+* Matrices: M = [1 2; 3 4; 5 6] == 3 x 2 matrix
+  * All ones matrix: ones(row, column)
+  * All zeros matrix: zeros(row, column)
+  * ";" is column delimiter
+  * Identity matrix: eye(dimension)
+* Vector: V = [1 2 3] == 1 x 3 vector
+  * Shorthand column vectors: 1:.5:2 == [1 1.5 2]
+    * Partition defaults to 1 
+* randn(3 , 3) = 3 x 3 matrix of random numbers drawn from normal / gaussian distribution
+  * rand(row, col) is for uniform distribution
+* Plotting:
+  * hist(vector, <optional bin count>) 
+
+#### Loading Data in Octave
+* size(matrix) => <row dimension> <column dimension>
+  * size(matrix, 1=row size or 2=col size)
+* length(vector) => column size of vector
+* pwd
+* load('file name') 
+  * "file name" => prints out data
+  * "file name" will be a matrix/vector
+* who/whos: variables in workspace
+* clear "variable": deletes variable from memory
+  * no variable param == deletes all variables
+* Saving variables to disk (binary format):
+  * save "file name" "variable"
+  * Readable format (ASCII): save "file name" v -ascii
+* Indexing matrices:
+  * M(row, col): **1-indexed**
+  * M(2,:): similar to python -> get entire row
+  * M(:, 2): get entire column
+  * M([1 2 3], :): get entire rows 1, 2, 3
+* Replacement in matrices:
+  * M(:,2) = [10; 11; 12]: replaces second column with column vector [10, 11,
+    12]
+* Appending in matrices:
+  * M = M[M, [1; 2; 3]]: appends matrix M with a new column [1, 2, 3] 
+* Flatten matrices (puts into a single column vector):
+  * M(:)
+* Concatenating matrices:
+  * C = [A B] where A and B are matrices of same dimensions
+  * C = [A; B]: 
+**semicolon means put in the bottom, comma means append / put to the right**
+
+
