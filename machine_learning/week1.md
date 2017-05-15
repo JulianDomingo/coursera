@@ -85,9 +85,3 @@ set.
 * This specific implementation of gradient descent is also called "batch" gradient descent. 
   * **Batch gradient descent):** each step of gradient descent uses *all* training examples (all samples in training set). 
 * TTK : Normal equations method: while it doesn't scale as well as gradient descent, this equation calculates the optimal hypothesis function without having to do it iteratively.
-
-
-
-
-
-

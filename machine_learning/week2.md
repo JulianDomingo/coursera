@@ -181,11 +181,28 @@ models.
 * Functions:
   * Create a file with an extension ".m", named as the function name.     
   * "function [return variable(s)] = <function name>(<parameter(s)>)
-    * <body> // **Note return statement, similar to scala in the sense of last statement modifying return variable is the return value**
+      <body> // **Note return statement, similar to scala in the sense of last statement modifying return variable is the return value**
+    endfunction
   * *Must be in the same directory as the function files.*
     * addpath("path\_to\_files")
 
 #### Vectorization
 * Optimizing programs with numerical computation libraries
   * More efficient code, less code, less bugs
-*  
+* Unvectorized speed <<< Vectorized speed
+  * I.e. don't iterate to perform an identical computation for vectorized
+    structures; use optimized libraries instead (numpy for python, etc.)
+  * Example: hypothesis function ->
+    * Unvectorized: for each parameter, theta<sub>i</sub> \* x<sub>i</sub>
+    * Vectorized: theta<sup>T</sup> \* x 
+    * (C++ example): theta.transpose() \* x;
+* Vectorized Gradient Descent:
+  * theta = theta - (learning\_rate \* sum(vector<sub>i</sub>) from i to n
+
+#### Excercises
+* Matrix Inverse-Vector Products: inverse matrix is common operation in ML
+  algorithms. However, inverse of matrices are computationally expensive, and
+is most often needed just to determine the vector x in the matrix equation
+Ax=b.
+  * Example: solving a linear regression problem with normal equation
+
