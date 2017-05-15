@@ -141,4 +141,51 @@ models.
   * C = [A; B]: 
 **semicolon means put in the bottom, comma means append / put to the right**
 
+#### Octave Operations, continued
+* matrix <condition>: 0 if false, 1 if true in matrix elements
+* find(matrix <condition>): actual elements satisfying condition
+* **help <command>**
+* sum(vector), prod(vector), floor(vector), ceil(vector)
+* Max column or row wise: max(matrix, [], <1: column, 2: row>)   
+  * Entire matrix: max(max(matrix))
+* Element-wise product of matrices: "A .\* B"
+* Revisiting inverse: pinv() == pseudo inverse (allows for "inversion" of
+  non-invertible matrices"
+* Plotting: plot(x, y)
+  * Overlapping plots: 
+    * plot(x<sub>1</sub>, y<sub>1</sub>) 
+    * hold on;
+    * plot(x<sub>2</sub>, y<sub>2</sub>)
+    * X and Y Labels: xlabel(), ylabel()
+    * Legend and title: legend(), title()
+* save as a .png: print -dpng 'name.png'
+* Subplot: subplot(<row>, <col>, <element number>)
+* Axis ranges: ([x<sub>min</sub> x<sub>max</sub> y<sub>min</sub> y<sub>max</sub>])
+* clf: Clears figures in plot window
+* Matrix visualization: imagesc(matrix)
+  * Colors represent values of elements
+  * colorbar, colormap gray;
+    * grayscale weights of matrix elements
+* **Can write multiple commands on same line delimited by commas**
 
+#### Octave Control Statement Syntax
+* For loops
+  * for i=min:max, // **Don't forget comma**
+      stuff;
+    end;   
+* break / continue
+* While loops / If statements: same syntax as for loops
+* else statements:
+  * "elseif condition,"
+  * "else" // **No comma here**
+* Functions:
+  * Create a file with an extension ".m", named as the function name.     
+  * "function [return variable(s)] = <function name>(<parameter(s)>)
+    * <body> // **Note return statement, similar to scala in the sense of last statement modifying return variable is the return value**
+  * *Must be in the same directory as the function files.*
+    * addpath("path\_to\_files")
+
+#### Vectorization
+* Optimizing programs with numerical computation libraries
+  * More efficient code, less code, less bugs
+*  
