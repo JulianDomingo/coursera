@@ -26,14 +26,16 @@ sigma = zeros(1, size(X, 2));
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 
+% Compute mean of each feature and subtract from the training set.
+mu = mean(X)
+X = X - mu
 
+% Compute standard deviation for each feature, and scale the samples with it.
+X_norm = [ones(size(X, 2), 1) (X / std(X))]
 
-
-
-
-
+sigma = [ones(size(X, 2), 1) (X / std(X))]
 
 
 % ============================================================
 
-end
+endfunction

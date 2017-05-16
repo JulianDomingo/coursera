@@ -18,8 +18,9 @@ for iter = 1:num_iters
     %
 
 
-
-
+    theta = theta - ((alpha / m) * (X' * (X * theta - y)))
+    
+    % (2 x 97) * (97 x 1)
 
 
 
