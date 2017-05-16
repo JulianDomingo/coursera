@@ -14,7 +14,7 @@ J = 0;
 %               You should set J to the cost.
 
 
-
+J = (1 / (2 * m)) * sum(((X * theta) - y) .^ 2) % X is size(training set) x size(feature count), theta is features column vector, y is output values for each sample in training set.
 
 
 % =========================================================================
