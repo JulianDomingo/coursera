@@ -198,6 +198,9 @@ models.
     * (C++ example): theta.transpose() \* x;
 * Vectorized Gradient Descent:
   * theta = theta - (learning\_rate \* sum(vector<sub>i</sub>) from i to n
+* **Octave by default interprets math operators to be matrix operations by
+  default.**
+  * Have to add "dot" character to do element-wise computation.
 
 #### Excercises
 * Matrix Inverse-Vector Products: inverse matrix is common operation in ML
