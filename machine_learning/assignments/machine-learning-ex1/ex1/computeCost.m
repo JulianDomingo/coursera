@@ -1,3 +1,6 @@
+% Julian Domingo
+% julian.domingo@utexas.edu
+%
 function J = computeCost(X, y, theta)
 %COMPUTECOST Compute cost for linear regression
 %   J = COMPUTECOST(X, y, theta) computes the cost of using theta as the
@@ -13,8 +16,7 @@ J = 0;
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
-
-
+J = (1 / (2 * m)) * sum(((X * theta) - y) .^ 2) % X is size(training set) x size(feature count), theta is features column vector, y is output values for each sample in training set.
 
 
 % =========================================================================
